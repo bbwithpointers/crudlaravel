@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,6 +13,7 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required'
         ]);
+        User::create($fields);
         return 'working register';
     }
 }
